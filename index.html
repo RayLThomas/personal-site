@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,46 +10,63 @@
   </head>
   <body>
     <header
-      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-5 mb-4"
+      class="container d-flex align-items-center justify-space-between py-5 mb-4"
     >
-      <ul class="nav col-12 col-md-auto px-5 mb-2 mb-md-0">
+      <ul class="nav col-12 mb-2 mb-md-0">
         <li>
-          <a href="#" class="nav-link px-4"><span>01</span>home</a>
+          <a href="#" class="nav-link link-dark pl-0"><span>01</span>home</a>
         </li>
         <li>
-          <a href="#" class="nav-link px-4 link-dark"><span>02</span>blog</a>
+          <a href="#" class="nav-link link-dark pl-0"><span>02</span>blog</a>
         </li>
         <li>
-          <a href="#" class="nav-link px-4 link-dark"><span>03</span>about</a>
+          <a href="#" class="nav-link link-dark pl-0"><span>03</span>about</a>
         </li>
       </ul>
     </header>
 
     <main class="container">
-      <div class="hero">
-        <h1>I love JavaScript</h1>
-        <p "text-uppercase">Hello, my name is Raymond</p>
+      <div class="hero d-flex flex-column">
+        <h1 class="order-2">I love JavaScript!</h1>
+        <p class="text-uppercase order-1">Hello, my name is Raymond</p>
+        <div class="heroContent order-3">
+          <p>I'm a Jr. Integration developer who loves JavaScript.</p>
+        </div>
       </div>
       <div>
         <h2>Featured Posts</h2>
         <div class="featured">
-            <div class="container">
-                <!-- Cards -->
-                <ul></ul>
-                <p class="footer text-right">See All Posts</p>
-            </div>
-        </div>        
-      </div>
-      
-    </main>
-    <footer class="py-4">
-        <div class="footerInner d-flex justify-content-around align-items-center">
-            <p class="footerlinks"><strong>link</strong><br><a href="/">link.url</a></p>
-            <p class="footerlinks"><strong>link</strong><br><a href="/">link.url</a></p>
-            <p class="footerlinks"><strong>link</strong><br><a href="/">link.url</a></p>
-            <p class="footerlinks"><strong>link</strong><br><a href="/">link.url</a></p>
-            <p class="footerlinks "><strong>link</strong><br><a href="/">link.url</a></p>
+          <div class="container">
+            <!-- Cards
+                USE CARD DECKS
+            https://getbootstrap.com/docs/4.0/components/card/#card-decks
+             -->
+            <ul></ul>
+            <p class="footer text-right">See All Posts</p>
+          </div>
         </div>
+      </div>
+    </main>
+    <footer class="container py-4">
+      <div
+        class="footerInner d-flex justify-content-between align-items-center"
+      >
+        <p class="footerlinks">
+          <strong>link</strong><br /><a href="/">link.url</a>
+        </p>
+        <p class="footerlinks">
+          <strong>link</strong><br /><a href="/">link.url</a>
+        </p>
+        <p class="footerlinks">
+          <strong>link</strong><br /><a href="/">link.url</a>
+        </p>
+        <p class="footerlinks">
+          <strong>link</strong><br /><a href="/">link.url</a>
+        </p>
+        <p class="footerlinks">
+          <strong>link</strong><br /><a href="/">link.url</a>
+        </p>
+      </div>
     </footer>
     <script src="./js/bootstrap.min.js"></script>
   </body>
