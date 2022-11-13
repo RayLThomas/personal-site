@@ -15,7 +15,9 @@ body {
 }
 
 h1 {
-  font-size: 6.5em;
+  font-size: 5.5em;
+  letter-spacing: 0.05em;
+  font-family: "Libre Bodoni", serif;
 }
 
 a {
