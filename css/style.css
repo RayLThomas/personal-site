@@ -79,6 +79,12 @@ main {
   min-height: 78vh;
 }
 
+main > div > h2 {
+  letter-spacing: 0.05em;
+  font-family: "Libre Bodoni", serif;
+  font-weight: 100;
+}
+
 .card p,
 .card h5 {
   color: rgb(7, 2, 17) !important;
