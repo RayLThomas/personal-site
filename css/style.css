@@ -2,8 +2,75 @@ html {
   overflow-y: scroll;
 }
 
+body {
+  background-color: rgb(7, 2, 17);
+}
+
+* {
+  color: rgb(251, 253, 251) !important;
+}
+
 .nav-link {
   padding-left: 0 !important;
+}
+
+h1 {
+  font-size: 6.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: initial;
+}
+
+::selection {
+  background: #b7ebff;
+}
+/* -----------------------
+HOME
+--------------------------*/
+.nav a:hover {
+  transition: box-shadow 0.18s cubic-bezier(0.36, 0.65, 0.62, 1);
+  box-shadow: inset 0 -4px 0 #868dee;
+}
+
+.hero a {
+  text-decoration: none;
+  border-bottom: 2px solid #87f7ac;
+  box-shadow: inset 0 -4px 0 #87f7ac;
+  color: inherit;
+  transition: background 0.1s cubic-bezier(0.36, 0.65, 0.62, 1);
+}
+
+.hero a:hover {
+  background: #87f7ac;
+}
+
+.hero p {
+  font-size: 1.5em;
+}
+
+main {
+  min-height: 78vh;
+}
+
+.card p,
+.card h5 {
+  color: rgb(7, 2, 17) !important;
+}
+
+/* -----------------------
+BIO
+--------------------------*/
+
+.bioImage {
+  background-image: url("../images/test.webp");
+  background-position: center;
+  background-size: cover;
+  min-height: 35em;
 }
 
 footer {
