@@ -35,6 +35,24 @@ a:visited {
 ::selection {
   background: #dbd93a;
 }
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 100;
+    transform: translateY(0px);
+  }
+}
+
 /* -----------------------
 HOME
 --------------------------*/
@@ -94,6 +112,10 @@ main > div > h2 {
   font-size: 1.5em;
 }
 
+.footerlinks > a {
+  color: rgb(79, 77, 209) !important;
+}
+
 /* -----------------------
 BIO
 --------------------------*/
@@ -115,4 +137,12 @@ footer a {
 
 footer a:hover {
   text-decoration: none;
+}
+
+/* -----------------------
+BLOG / CODE
+--------------------------*/
+
+span.postMeta {
+  color: rgb(119, 119, 119) !important;
 }
