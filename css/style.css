@@ -151,3 +151,21 @@ span.postMeta {
 .gist:nth-child(5) {
   color: black;
 }
+
+/* -----------------------
+BLOG POST TEMPLATE
+--------------------------*/
+
+.postTitle {
+  color: rgb(79, 77, 209) !important;
+}
+
+.blogContent p, ol {
+  font-size: 1.5rem!important;
+  padding-bottom: 1em;
+}
+
+.blogContent ol {
+  list-style-type:decimal;
+  margin-left: .3em;
+}
