@@ -7,7 +7,7 @@ body {
 }
 
 * {
-  color: rgb(251, 253, 251) !important;
+  color: rgb(251, 253, 251);
 }
 
 .nav-link {
@@ -145,4 +145,8 @@ BLOG / CODE
 
 span.postMeta {
   color: rgb(119, 119, 119) !important;
+}
+
+.gist:nth-child(5) {
+  color: black;
 }
