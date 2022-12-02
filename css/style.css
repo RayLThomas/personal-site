@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: rgb(7, 2, 17);
+  background-color: rgb(14 5 32);
 }
 
 * {
@@ -124,6 +124,7 @@ BIO
   background-image: url("../images/20220115_114017.jpg");
   background-position: center;
   background-size: cover;
+  filter: grayscale(0.25);
   min-height: 35em;
 }
 
