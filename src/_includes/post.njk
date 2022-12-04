@@ -1,0 +1,22 @@
+---
+
+layout: 'base.njk'
+
+---
+
+    <main class="container blogPost">
+
+      <div class="blogContent d-flex flex-column align-items-center container col-sm-12 col-lg-7">
+          <div class="postEntry py-4">
+            <header class="py-5">
+                <h1>{{ title }}</h1>
+                <span class="postMeta"> {{ date | postDate}} | {{tags | join(", ") }}</span>
+              </header>
+              <img class="img-fluid pb-5" src={{ image }} alt={{ imageAlt }}>
+              <br>
+
+              {{ content | safe }}
+
+            </div>
+      </div>
+    </main>

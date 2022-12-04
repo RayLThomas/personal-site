@@ -1,0 +1,24 @@
+{
+  "name": "personal-site",
+  "version": "1.0.0",
+  "description": "My personal dev site",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RayLThomas/personal-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RayLThomas/personal-site/issues"
+  },
+  "homepage": "https://github.com/RayLThomas/personal-site#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2"
+  }
+}

@@ -1,0 +1,24 @@
+---
+  title: Code
+  layout: 'base.njk'
+---
+    <main class="container">
+      <header class="py-5">
+        <h1 class="text-center">Code</h1>
+      </header>
+      <div class="devContent">
+        <ol class="d-flex flex-column align-items-center container col-sm-12 col-lg-7">
+
+          {%- for codePost in collections.Code | reverse -%}
+            <li class="postEntry py-4">
+              <a href="{{ codePost.url }}"><h2 class="postTitle">{{ codePost.data.title }}</h2></a>
+              <span class="postMeta">{{ codePost.data.date | postDate }} | {{codePost.data.tags | join(", ") }}</span>
+              <p class="fs-4">
+                {{ codePost.data.description }}
+              </p>
+            </li>
+          {%- endfor -%}
+
+        </ol>
+      </div>
+    </main>

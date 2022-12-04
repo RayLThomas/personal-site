@@ -1,0 +1,54 @@
+---
+title: Raymond Thomas
+layout: 'base.njk'
+---
+
+    <main class="container">
+      <div class="hero fadeIn d-flex flex-column py-5">
+        <h1 class="order-2">I like JavaScript.</h1>
+        <p class="text-uppercase fw-bold order-1">
+          <a id="heroBioLink" href="/bio/">Hello, my name is Raymond</a>
+        </p>
+        <div class="heroContent order-3">
+          <p class="fs-3">
+            I am a remote web specialist in the Tennessee mountains.<br />I also
+            write about the web and productivity on my <a href="/blog/">blog</a> and network on 
+            <a href="https://www.linkedin.com/in/raythomasii/" target="_blank">LinkedIn</a>.
+          </p>
+        </div>
+      </div>
+      <div class="py-5">
+        <h2>Featured Posts</h2>
+        <div class="featured">
+          <div class="py-3">
+            <div class="row row-cols-1 row-cols-md-4 py-3 g-4">
+
+          {%- for post in collections.Featured | reverse -%}
+            <div class="col">
+                <a href={{post.url}}
+                  ><div class="card h-100">
+                    <img
+                      src={{post.data.image}}
+                      class="card-img-top"
+                      alt={{post.data.imageAlt}}
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">{{post.data.title}}</h5>
+                      <p class="card-text">
+                        {{post.data.description}}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+          {%- endfor -%}
+
+
+            </div>
+            <p class="footer pt-3 text-right text-end text-capitalize">
+              <a href="/blog.html">See All Posts <span>-></span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>

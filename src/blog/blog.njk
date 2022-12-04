@@ -1,0 +1,25 @@
+---
+title: Blog
+layout: "base.njk"
+---
+
+    <main class="container">
+      <header class="py-5">
+        <h1 class="text-center">Blog</h1>
+      </header>
+      <div class="blogContent">
+        <ol class="d-flex flex-column align-items-center container col-sm-12 col-lg-7">
+
+          {%- for post in collections.blog | reverse -%}
+            <li class="postEntry py-4">
+              <a href="{{ post.url }}"><h2 class="postTitle">{{ post.data.title }}</h2></a>
+              <span class="postMeta">{{ post.data.date | postDate }} | {{post.data.tags | join(", ") }}</span>
+              <p class="fs-4">
+                {{ post.data.description }}
+              </p>
+            </li>
+          {%- endfor -%}
+
+        </ol>
+      </div>
+    </main>
