@@ -16,6 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code</title>
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   
   <body>
@@ -50,7 +51,7 @@
         <h1 class="text-center">Code</h1>
       </header>
       <div class="devContent">
-        <ol class="d-flex flex-column align-items-center container col-sm-12 col-lg-7"><li class="postEntry py-4">
+        <ol class="d-flex flex-column align-items-start container col-sm-12 col-lg-7"><li class="postEntry py-4">
               <a href="/code/codePosts/codewars-narcissistic-challenge/"><h2 class="postTitle">Does my number look big in this?</h2></a>
               <span class="postMeta">Nov 30, 2022 | Code, Featured</span>
               <p class="fs-4">
@@ -84,5 +85,16 @@
 
     <script src="/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

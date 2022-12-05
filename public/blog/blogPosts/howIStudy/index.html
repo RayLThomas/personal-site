@@ -16,6 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How to Structure Your Time for Studies</title>
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   
   <body>
@@ -52,7 +53,7 @@
           <div class="postEntry py-4">
             <header class="py-5">
                 <h1>How to Structure Your Time for Studies</h1>
-                <span class="postMeta"> Nov 5, 2022 | blog, Featured, JavaScript</span>
+                <span class="postMeta"> Nov 5, 2022 | Blog, Featured, JavaScript</span>
               </header>
               <img class="img-fluid pb-5" src=/images/planning.jpg alt=My study regiment written on a sticky note on my laptop.>
               <br>
@@ -151,5 +152,16 @@
 
     <script src="/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

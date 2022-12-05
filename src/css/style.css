@@ -173,3 +173,27 @@ BLOG POST TEMPLATE
 .gist span {
   color: #333;
 }
+
+
+/******************************
+MOBILE
+******************************/
+
+
+
+@media only screen and (max-width: 600px) {
+
+  .postEntry {
+    max-width: 85vw;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  .gist {
+    max-width: 100vw;
+  }
+  
+
+}
