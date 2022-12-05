@@ -4,6 +4,7 @@ date: 2022-12-05T21:12:07.453Z
 tags:
   - JavaScript
   - snippet
+  - Featured
 image: /images/colorfulclock.jpg
 imageAlt: A colorful clock
 description: A quick code snippet that converts a unix timestamp to something
