@@ -8,9 +8,9 @@ layout: "base.njk"
         <h1 class="text-center">Blog</h1>
       </header>
       <div class="blogContent">
-        <ol class="d-flex flex-column align-items-center container col-sm-12 col-lg-7">
+        <ol class="d-flex flex-column align-items-start container col-sm-12 col-lg-7">
 
-          {%- for post in collections.blog | reverse -%}
+          {%- for post in collections.Blog | reverse -%}
             <li class="postEntry py-4">
               <a href="{{ post.url }}"><h2 class="postTitle">{{ post.data.title }}</h2></a>
               <span class="postMeta">{{ post.data.date | postDate }} | {{post.data.tags | join(", ") }}</span>
