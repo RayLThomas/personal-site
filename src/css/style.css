@@ -195,5 +195,8 @@ MOBILE
     max-width: 100vw;
   }
   
+  ul.nav {
+    justify-content: center;
+  }
 
 }
