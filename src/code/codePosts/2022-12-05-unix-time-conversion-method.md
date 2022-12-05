@@ -1,5 +1,5 @@
 ---
-title: Unix Time Conversion Method
+title: Unix Time Conversion Function
 date: 2022-12-05T21:12:07.453Z
 tags:
   - JavaScript
