@@ -6,7 +6,7 @@ tags:
   - Featured
 image: /images/weather.jpg
 imageAlt: A lovely sunset
-description: An solid starting point to make your own. I hope you know some CSS!
+description: A solid starting point to make your own. I hope you know some CSS!
 ---
 O﻿ur app is very simple, but covers topics like `async/await`, `for/of loops`, `Unix timestamp conversion`, the `fetch API`, and more. \
 \
