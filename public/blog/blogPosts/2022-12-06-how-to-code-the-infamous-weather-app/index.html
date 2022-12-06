@@ -1,0 +1,151 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Code the Infamous Weather App</title>
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  
+  <body>
+      <header
+      class="container d-flex align-items-center justify-space-between py-5 mb-4"
+    >
+      <ul class="nav col-12 mb-2 mb-md-0">
+        <li class="pe-3">
+          <a href="/" class="nav-link pl-0"
+            ><span class="fw-bold pe-1">01</span>home</a
+          >
+        </li>
+        <li class="pe-3">
+          <a href="/blog/" class="nav-link pl-0"
+            ><span class="fw-bold pe-1">02</span>blog</a
+          >
+        </li>
+        <li class="pe-3">
+          <a href="/code/" class="nav-link pl-0"
+            ><span class="fw-bold pe-1">03</span>code</a
+          >
+        </li>
+        <li class="pe-3">
+          <a href="/bio/" class="nav-link pl-0"
+            ><span class="fw-bold pe-1">04</span>bio</a
+          >
+        </li>
+      </ul>
+    </header>
+      
+    <main class="container blogPost">
+
+      <div class="blogContent d-flex flex-column align-items-center container col-sm-12 col-lg-7">
+          <div class="postEntry py-4">
+            <header class="py-5">
+                <h1>How to Code the Infamous Weather App</h1>
+                <span class="postMeta"> Dec 5, 2022 | Blog, JavaScript, Featured</span>
+              </header>
+              <img class="img-fluid pb-5" src=/images/weather.jpg alt=A lovely sunset>
+              <br>
+
+              <p>O﻿ur app is very simple, but covers topics like <code>async/await</code>, <code>for/of loops</code>, <code>Unix timestamp conversion</code>, the <code>fetch API</code>, and more. <br>
+<br>
+L﻿et me begin by showing you what our (almost) entirely JavaScript site will look like. Keep in mind that you can easily add whatever weather data you wish to this code, and even style it to make it look really professional. <br>
+A﻿ll code for this project can be found <a href="https://github.com/RayLThomas/Infamous-Weather-App-Guts">here on GitHub</a>.</p>
+<h2>T﻿he Project</h2>
+<p>1﻿. A prompt for your US zip code:</p>
+<p><img src="/images/screenshot-from-2022-12-05-18-23-39.png" alt="A prompt asking for your US zip code"></p>
+<p><br>
+2﻿.  Some weather data about today's forecast in your area:</p>
+<p><img src="/images/screenshot-from-2022-12-05-16-41-31.png" alt="returned data to the DOM"></p>
+<h2>F﻿ile and Directory Setup</h2>
+<p>F﻿irst, we'll set up the container for us to inject HTML elements to the DOM.</p>
+<script src="https://gist.github.com/RayLThomas/69abaae4352b35fc14f10fdbc0f8c4d1.js"></script>
+<p>N﻿ext, we'll add a <code>script.js</code> file. I've put mine in within a script directory. <code>scripts/script.js</code></p>
+<script src="https://gist.github.com/RayLThomas/dfc3fd6b1069b91f00679b73fbdc2812.js"></script>
+<h2>W﻿eather Account Sign Up</h2>
+<p>H﻿ead over to <a href="https://openweathermap.org/">https://openweathermap.org/</a> and sign up for a free account.
+T﻿here are a few tiers and product offerings, but the free version is perfect for our use.</p>
+<p>C﻿lick on your profile and My API Keys.<br>
+<br>
+F﻿rom here you should see a default key waiting for you. You're also welcome to generate another API key if you prefer. Name it whatever you like. <br>
+<br>
+V﻿isit <a href="https://openweathermap.org/forecast5">their documentation</a> to learn about the shape of the returned data, what you have access to, and what parameters should be included in your API call.<br>
+<br>
+Y﻿ou will need to confirm your email address with them. Conveniently, they provide a test API GET request with your API in it. I recommend downloading and using something like <a href="https://www.postman.com/downloads/">Postman</a> or <a href="https://insomnia.rest/download">Insomnia</a> to confirm your API keys are working. There may be a 2-hour delay, but most users report only a few minutes of wait time.</p>
+<h2>F﻿etch the Data</h2>
+<p>W﻿e are going to begin by prompting the user for their zip code. Once we have that number, we will build our API Get request.</p>
+<script src="https://gist.github.com/RayLThomas/72d51e5054db24bd1a1dc68df7631d47.js"></script>
+<p>A﻿ few quick callouts:</p>
+<ol>
+<li>W﻿e've exposed our API key. Ideally this should be saved in something like a <code>.env</code> file and not published with it exposed. Imagine if you were paying for calls and someone used your API key to rack up a giant bill! In this example, I don't mind exposing it.</li>
+<li>O﻿ur code is wrapped in an asynchronous function called <code>main()</code>. Without this wrapper, we could not save the asynchronous API call to a variable, since promises can't return values globally.</li>
+<li>A﻿fter setting the variables, we wrap everything else in a try/catch block for a basic error handling.</li>
+<li>W﻿e are calling a <code>getJsonData</code> function that we've written to return a parsed data <code>string</code> to <code>JSON</code>.</li>
+<li>W﻿e make use of <code>fetch</code>'s second (optional) argument that resolves any <code>CORS</code> errors we may receive when making API calls to an external server.</li>
+<li>I﻿n the <code>catch</code> block, I alerted the user that something went wrong and restarted the app by calling <code>main()</code> once more.</li>
+</ol>
+<p>I﻿n the try block, go ahead and <code>console.log</code> the <code>jsondata</code> variable to see it in the console.</p>
+<h2>Render the Data With String Interpolation</h2>
+<p>O﻿k, here comes the fun part! Grab each node that we created at the beginning and add <code>.textContent</code> that utilizes the returned <code>jsondata</code>. (This should be within the <code>try</code> block.)<br>
+<br>
+I﻿ added sunrise and sunset data to mine. This requires a quick little Unix timestamp conversion that I wrote about <a href="https://www.raymond-thomas.com/code/codeposts/2022-12-05-unix-time-conversion-method/">here</a>.</p>
+<p>I﻿ also found that appending all the nodes to the container div was awful repetitive. To keep things nice and D.R.Y., I wrote a quick function to loop through an array of created nodes and append each:</p>
+<script src="https://gist.github.com/RayLThomas/85b979043441eee0eaa27c385f66f8b3.js"></script>
+<h2>S﻿ummary</h2>
+<p>W﻿e've done a lot! Remember, a﻿ll code for this project can be found <a href="https://github.com/RayLThomas/Infamous-Weather-App-Guts">here on GitHub</a>.</p>
+<p>W﻿e made an account with Open Weather Map, set up API keys, called some weather data, formatted and injected it to the DOM, added a few helper functions, and implemented a basic error handling mechanism. <br>
+<br>
+N﻿ow it is up to you to style it up and make it something worth sharing with the world!</p>
+
+
+            </div>
+      </div>
+    </main>
+          <footer>
+      <div class="fullWidth container py-4">
+        <div
+          class="footerInner d-flex justify-content-start align-items-center"
+        >
+          <p class="footerlinks">
+            <strong><span>&#169;</span> 2017-2022</strong><br /><a
+              href="/"
+              >Raymond Thomas</a
+            >
+          </p>
+          <p class="footerlinks ps-5">
+            <strong>Social</strong><br /><a
+              href="https://www.linkedin.com/in/raythomasii/"
+              >LinkedIn</a
+            >
+          </p>
+          <p class="footerlinks"></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

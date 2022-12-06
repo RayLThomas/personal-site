@@ -108,6 +108,12 @@ main > div > h2 {
   color: rgb(7, 2, 17) !important;
 }
 
+.card > img:hover {
+  opacity: 90%;
+  transition-duration: .200s;
+  transition-timing-function: ease-in-out;
+}
+
 .footer a {
   font-size: 1.5em;
 }
@@ -198,9 +204,21 @@ MOBILE
   .gist {
     max-width: 100vw;
   }
+
+  .postEntry > p > img {
+    max-width: 80vw;
+    display: block;
+    margin: 0 auto;
+  }
   
   ul.nav {
     justify-content: center;
   }
 
+}
+
+@media only screen and (max-width: 600px) {
+  footer > div > .footerInner {
+    justify-content: center !important;
+  }
 }

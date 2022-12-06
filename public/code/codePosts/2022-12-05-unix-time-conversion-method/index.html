@@ -15,7 +15,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code</title>
+    <title>Unix Time Conversion Function</title>
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   
@@ -46,27 +46,30 @@
         </li>
       </ul>
     </header>
-          <main class="container">
-      <header class="py-5">
-        <h1 class="text-center">Code</h1>
-      </header>
-      <div class="devContent">
-        <ol class="d-flex flex-column align-items-start container col-sm-12 col-lg-7"><li class="postEntry py-4">
-              <a href="/code/codePosts/2022-12-05-unix-time-conversion-method/"><h2 class="postTitle">Unix Time Conversion Function</h2></a>
-              <span class="postMeta">Dec 5, 2022 | Code, JavaScript, snippet, Featured</span>
-              <p class="fs-4">
-                A quick code snippet that converts a unix timestamp to something human readable.
-              </p>
-            </li><li class="postEntry py-4">
-              <a href="/code/codePosts/codewars-narcissistic-challenge/"><h2 class="postTitle">Does my number look big in this?</h2></a>
-              <span class="postMeta">Nov 30, 2022 | Code, Featured</span>
-              <p class="fs-4">
-                How to check an Armstrong Number - a CodeWars challenge.
-              </p>
-            </li></ol>
+      
+    <main class="container blogPost">
+
+      <div class="blogContent d-flex flex-column align-items-center container col-sm-12 col-lg-7">
+          <div class="postEntry py-4">
+            <header class="py-5">
+                <h1>Unix Time Conversion Function</h1>
+                <span class="postMeta"> Dec 5, 2022 | Code, JavaScript, snippet, Featured</span>
+              </header>
+              <img class="img-fluid pb-5" src=/images/colorfulclock.jpg alt=A colorful clock>
+              <br>
+
+              <p>T﻿his function takes in a unix timestamp as an argument and returns the time in HH:MM:SS format.</p>
+<script src="https://gist.github.com/RayLThomas/bfcb933422e5c7bd16aea6f87330e87f.js"></script>
+<p>B﻿ecause Unix times are recorded in seconds, we need to multiply by 1000 to get the number of milliseconds. Milliseconds are used for JavaScript Datetimes.<br>
+<br>
+F﻿inally, we simply use JavaScript's Date method <code>toLocaleTimeString();</code> and pass in the <code>en-US</code> locales.<br>
+<br>
+Y﻿ou may find information about acceptable locales and options at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat">Mozilla</a>.</p>
+
+
+            </div>
       </div>
     </main>
-
           <footer>
       <div class="fullWidth container py-4">
         <div
