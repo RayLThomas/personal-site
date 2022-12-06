@@ -160,6 +160,10 @@ BLOG POST TEMPLATE
   color: rgb(79, 77, 209) !important;
 }
 
+.postEntry {
+  max-width: 100%;
+}
+
 .blogContent p, ol {
   font-size: 1.5rem!important;
   padding-bottom: 1em;
