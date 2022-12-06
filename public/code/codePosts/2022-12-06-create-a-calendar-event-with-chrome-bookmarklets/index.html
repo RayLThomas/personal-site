@@ -15,7 +15,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Does my number look big in this?</title>
+    <title>Create a Calendar Event With Chrome Bookmarklets</title>
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   
@@ -52,40 +52,13 @@
       <div class="blogContent d-flex flex-column align-items-center container col-sm-12 col-lg-7">
           <div class="postEntry py-4">
             <header class="py-5">
-                <h1>Does my number look big in this?</h1>
-                <span class="postMeta"> Nov 30, 2022 | Code, JavaScript</span>
+                <h1>Create a Calendar Event With Chrome Bookmarklets</h1>
+                <span class="postMeta"> Nov 17, 2022 | Code, Featured, JavaScript</span>
               </header>
-              <img class="img-fluid pb-5" src=/images/elephant.jpg alt=a big elephant.>
+              <img class="img-fluid pb-5" src=/images/planner.jpg alt=planner in use>
               <br>
 
-              
-
-            <p>Instructions from <a href="https://www.codewars.com/kata/5287e858c6b5a9678200083c">CodeWars challenge</a> read:<br><br>
-            <em>
-              A Narcissistic Number (or Armstrong Number) is a positive number which is the sum of its own digits, each raised to the power of the number of digits in a given base. In this Kata, we will restrict ourselves to decimal (base 10).
-              <br><br>
-              For example, take 153 (3 digits), which is narcisstic:
-              <br>
-              1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
-              <br>
-              and 1652 (4 digits), which isn't:
-              <br>
-              1^4 + 6^4 + 5^4 + 2^4 = 1 + 1296 + 625 + 16 = 1938
-              <br><br>
-              The Challenge:
-              <br>
-              Your code must return true or false (not 'true' and 'false') depending upon whether the given number is a Narcissistic number in base 10.
-            </em></p>
-            <h2>My Solution</h2>
-            <script src="https://gist.github.com/RayLThomas/e023fdb147d7465a0aa20da401f66911.js"></script>
-            <p>
-              First, I convert the passed in number to a string. This allows me to iterate over the number to split the digits into an array. Map the
-              values and use parseInt(x, 10) to convert each back to an integer.               
-            </p>
-            <p>
-              Using Array's reduce method, we do the entire calculation in one go and simply return true or false if this new value equals the value that was originally passed in.
-            </p>
-
+              <script src="https://gist.github.com/RayLThomas/bce2ceae8cb9c38a52173831df508ab0.js"></script>
 
             </div>
       </div>
