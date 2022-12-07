@@ -4,6 +4,7 @@ date: 2022-11-17T13:30:13.341Z
 tags:
   - Featured
   - JavaScript
+  - snippet
 image: /images/planner.jpg
 imageAlt: planner in use
 description: Code a quick bookmarklet that adds an event to your calendar
