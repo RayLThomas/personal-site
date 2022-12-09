@@ -118,6 +118,20 @@ main > div > h2 {
   font-size: 1.5em;
 }
 
+.footer a #arrow {
+  position: relative;
+  left: 0;
+  opacity: 0;
+}
+
+.footer a:hover #arrow {
+  position: relative;
+  left: .35em;
+  opacity: 1;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
 .footerlinks > a {
   color: rgb(79, 77, 209) !important;
 }
