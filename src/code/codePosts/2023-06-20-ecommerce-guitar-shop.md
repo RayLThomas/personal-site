@@ -12,7 +12,13 @@ description: Guitar Shop Demo, an ecommerce demo site built from the ground up.
   The site blends my love for web development and music, allowing users to
   browse and select guitars just as they would on a real ecommerce platform.
 ---
-Hello! I'm thrilled to showcase my latest project, Guitar Shop Demo, an ecommerce demo site built from the ground up. The site blends my love for web development and music, allowing users to browse and select guitars just as they would on a real ecommerce platform.
+Hello! I'm thrilled to showcase my latest project, [Guitar Shop Demo](https://guitar-shop-demo.com/), an ecommerce demo site built from the ground up. The site blends my love for web development and music, allowing users to browse and select guitars just as they would on a real ecommerce platform.
+
+
+
+<https://guitar-shop-demo.com/>
+
+[V﻿iew on Github.](https://github.com/RayLThomas/Guitar-Shop)
 
 
 
@@ -26,21 +32,15 @@ The project is a testament to the modern web development stack. Here are the key
 * HTML, CSS, JavaScript: These are the building blocks of the site. HTML for the basic structure, CSS for styling, and JavaScript for functionality.
 * Git: Git was used for version control, allowing for effective tracking of changes and efficient collaboration.
 
-
-
 ## Key Features of Guitar Shop Demo
 
 * User Authentication: Users can sign up and log in to access more features, like adding items to the cart. User authentication is handled by Firebase Auth.
 * Product Catalog: The website features a diverse catalog of guitars. Users can browse through the products, read their descriptions, and view detailed images.
 * Shopping Cart: A fully functional shopping cart is part of the website. Users can add products to the cart, adjust quantities, and view the total price.
 
-
-
 ## The Development Journey
 
 Building the Guitar Shop Demo was a fantastic journey. It allowed me to explore and deepen my skills in front-end and back-end development, particularly with React and Firebase. From setting up the basic structure to creating a responsive layout with Bootstrap, and implementing an intuitive user interface with React, every step was a learning experience.
-
-
 
 I also used Git extensively to manage the codebase, which made the development process more organized and efficient.
 
