@@ -5,7 +5,7 @@ tags:
   - Project
   - JavaScript
   - Ecommerce
-  - Code
+  - React
 image: /images/guitar-shop-demo.jpg
 imageAlt: https://guitar-shop-demo.com/shop/acoustics
 description: Guitar Shop Demo, an ecommerce demo site built from the ground up.
