@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: rgb(9, 2, 24);
+  background-color: rgb(7, 7, 22);
 }
 
 * {
@@ -97,12 +97,6 @@ main {
   min-height: 78vh;
 }
 
-main > div > h2 {
-  letter-spacing: 0.05em;
-  font-family: "Libre Bodoni", serif;
-  font-weight: 100;
-}
-
 .card p,
 .card h5 {
   color: rgb(7, 2, 17) !important;
@@ -184,7 +178,7 @@ BLOG POST TEMPLATE
   max-width: 100%;
 }
 
-.blogContent p, ol {
+.blogContent p, ol, li {
   font-size: 1.5rem!important;
   padding-bottom: 1em;
 }

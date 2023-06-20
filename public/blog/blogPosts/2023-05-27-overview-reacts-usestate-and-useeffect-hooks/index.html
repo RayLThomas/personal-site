@@ -1,0 +1,119 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview React&#39;s useState and useEffect Hooks</title>
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link rel="icon" href="/images/homeIcon.png"/>
+    <script src="https://kit.fontawesome.com/7839b4a7d4.js" crossorigin="anonymous"></script>
+  </head>
+  
+  <body>
+      <header
+      class="container d-flex align-items-center justify-space-between py-5 mb-4"
+    >
+      <ul class="nav col-12 mb-2 mb-md-0">
+        <li class="pe-3">
+          <a href="/" class="nav-link pl-0"
+            ><span class="fw-bold pe-1">01</span>home</a
+          >
+        </li>
+        <li class="pe-3">
+          <a href="/blog/" class="nav-link pl-0"
+            ><span class="fw-bold pe-1">02</span>blog</a
+          >
+        </li>
+        <li class="pe-3">
+          <a href="/code/" class="nav-link pl-0"
+            ><span class="fw-bold pe-1">03</span>code</a
+          >
+        </li>
+        <li class="pe-3">
+          <a href="/bio/" class="nav-link pl-0"
+            ><span class="fw-bold pe-1">04</span>bio</a
+          >
+        </li>
+      </ul>
+    </header>
+      
+    <main class="container blogPost">
+
+      <div class="blogContent d-flex flex-column align-items-center container col-sm-12 col-lg-7">
+          <div class="postEntry py-4">
+            <header class="py-5">
+                <h1>Overview React&#39;s useState and useEffect Hooks</h1>
+                <span class="postMeta"> Jan 11, 2023 | Blog, React</span>
+              </header>
+              <img class="img-fluid pb-5" src=/images/hook.jpg alt=A hook image>
+              <br>
+
+              <p>Hooks are an important topic in React, and understanding common hooks like <strong><code>useState</code></strong> and <strong><code>useEffect</code></strong> is crucial for developing React applications.</p>
+<h3>u﻿seState Hook:</h3>
+<p>T﻿he <code>useState </code>hook provides functional components with their own internal state. It returns a pair of value:</p>
+<ol>
+<li>t﻿he current value</li>
+<li>a﻿ function to update that value</li>
+</ol>
+<p>A﻿ common example using a counter:</p>
+<script src="https://gist.github.com/RayLThomas/3455bd91735a8ea9832677f0f6c539dc.js"></script>
+<p>I﻿n this example, the <code>useState </code>hook defines the <strong><code>count</code></strong> state variable and the <strong><code>setCount</code></strong> function used to update the state. The initial value of <strong><code>count</code></strong> is set to 0.</p>
+<h3>u﻿seEffect Hook:</h3>
+<p>T﻿he <code>useEffect </code>hook allows you to perform side effects in functional components. It is somewhat similar to lifecycle methods like <strong><code>componentDidMount</code></strong> and <strong><code>componentDidUpdate</code></strong>. This hook can be used to fetch data, subscribe to events, or any other action that has side effects.</p>
+<p>A﻿n example from rendering returned API data:</p>
+<script src="https://gist.github.com/RayLThomas/23fd8d87ae12e7db4d1dd1702d880752.js"></script>
+<p>I﻿n this example, the <strong><code>useEffect</code></strong> hook fetches data from a made up API endpoint when the component mounts for the first time. The empty array passed in is the dependency array and makes the hook run only once. The fetched data is stored in the <strong><code>data</code></strong> state variable by use of the <strong><code>setData</code></strong> function.</p>
+
+
+            </div>
+      </div>
+    </main>
+          <footer>
+      <div class="fullWidth container py-4">
+        <div
+          class="footerInner d-flex justify-content-start align-items-center"
+        >
+          <p class="footerlinks">
+            <strong><span>&#169;</span> 2017-2022</strong><br /><a
+              href="/"
+              >Raymond Thomas</a
+            >
+          </p>
+          <p class="footerlinks ps-5">
+            <strong>Social</strong><br />
+            <a href="https://github.com/RayLThomas" target="_blank">Github</a><br />
+            <a href="https://www.linkedin.com/in/raythomasii/" target="_blank">LinkedIn</a><br />
+            
+          </p>
+          <p class="footerlinks"></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
