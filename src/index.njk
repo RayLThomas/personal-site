@@ -15,35 +15,7 @@ layout: 'base.njk'
             write about the web, JavaScript, and productivity on my <a href="/blog/">blog</a>.
           </p>
         </div>
-      </div>
-      
-      <div class="py-5">
-        <h2>Recent Projects</h2>
-        <div class="project">
-          <div class="py-3">
-            <div class="row row-cols-1 row-cols-md-4 py-3 g-4">
-
-          {%- for post in collections.Project | reverse -%}
-            <div class="col">
-                <a href={{post.url}}
-                  ><div class="card h-100">
-                    <img
-                      src={{post.data.image}}
-                      class="card-img-top"
-                      alt={{post.data.imageAlt}}
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">{{post.data.title}}</h5>
-                      <p class="card-text">
-                        {{post.data.description}}
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-          {%- endfor -%}
-        </div>
-      </div>
+      </div>       
 
       <div class="py-5">
         <h2>Featured Posts</h2>
