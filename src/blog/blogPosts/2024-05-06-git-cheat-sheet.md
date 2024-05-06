@@ -2,7 +2,6 @@
 title: Git Cheat Sheet
 date: 2023-09-12T19:05:36.701Z
 tags:
-  - Blog
   - Git
 image: /images/git_cheat_sheet.jpg
 imageAlt: AI generated image for the git cheetsheet post of a futuristic computer.
@@ -23,24 +22,22 @@ description: I've kept track of all my most commonly used git commands and a few
    3. git push origin <your-branch-name-here>\
       This command pushes the commits from your local branch to the remote repository. 
 5. git log - views project history including dates, changes, and user.
-6. git clone <url> - Clone a repository into a new directory.
-7. 1. Usage: git clone https://github.com/user/repository.git
-8. git pull: Fetch from and integrate with another repository or a local branch.
-9. 1. Usage: git pull origin master
-10. git branch - List, create, or delete branches.
-11. 1. Usage: git branch (list branches), git branch new-branch (create a new branch), git branch -d branch-name (delete a branch)
-12. git checkout - Switch branches or restore working tree files.
-13. 1. Usage: git checkout branch-name, git checkout -b new-branch-name (create and switch to new branch)
-14. git merge <branch>: Join two or more development histories together.
-15. 1. Usage - git merge feature-branch
-16. git reset: Reset current HEAD to the specified state.
-17. 1. Usage - git reset --hard HEAD^ (move back to one commit)
-18. git stash: Stash the changes in a dirty working directory.
-19. 1. Usage - git stash, git stash apply
-20. git diff: Show changes between commits, commit and working tree, etc.
-21. 1. Usage - git diff, git diff --staged
-
-
+6. git clone <url> - Clone a repository into a new directory.\
+   Usage: git clone https://github.com/user/repository.git
+7. git pull: Fetch from and integrate with another repository or a local branch.\
+   Usage: git pull origin master
+8. git branch - List, create, or delete branches.\
+   Usage: git branch (list branches), git branch new-branch (create a new branch), git branch -d branch-name (delete a branch)
+9. git checkout - Switch branches or restore working tree files.\
+   Usage: git checkout branch-name, git checkout -b new-branch-name (create and switch to new branch)
+10. git merge <branch>: Join two or more development histories together.\
+    Usage - git merge feature-branch
+11. git reset: Reset current HEAD to the specified state.\
+    Usage - git reset --hard HEAD^ (move back to one commit)
+12. git stash: Stash the changes in a dirty working directory.\
+    Usage - git stash, git stash apply
+13. git diff: Show changes between commits, commit and working tree, etc.\
+    Usage - git diff, git diff --staged
 
 # Tips for Managing Changes:
 
@@ -57,25 +54,21 @@ description: I've kept track of all my most commonly used git commands and a few
 
 # Collaborating:
 
-18. Fetch Changes: Regularly fetch changes from the remote repository to keep your local copy up to date and minimize merge conflicts.
-19. 1. Usage: git fetch origin
-20. Reviewing Logs: Regularly review logs to keep track of changes made by team members and understand project history.
-21. 1. Usage: git log --oneline --graph
-
-
-
-
+18. Fetch Changes: Regularly fetch changes from the remote repository to keep your local copy up to date and minimize merge conflicts.\
+    Usage: git fetch origin
+19. Reviewing Logs: Regularly review logs to keep track of changes made by team members and understand project history.\
+    Usage: git log --oneline --graph
 
 How to ensure that your Dev branch is up to date with the main branch:
 
-20. Switch to the dev branch:
-21. 1. git checkout dev
-22. Fetch the latest changes from your remote repository:
-23. 1. git fetch origin
-24. Merge changes from main into dev:
-25. 1. git merge origin/main\
-       This command merges the latest changes from main (assuming main is up to date) into your dev branch..
-26. Push the updated dev branch back to the remote to ensure that others working on the project are also up to date:
-27. 1. git push origin dev
+20. Switch to the dev branch:\
+    git checkout dev
+21. Fetch the latest changes from your remote repository:\
+    git fetch origin
+22. Merge changes from main into dev:\
+    git merge origin/main\
+    This command merges the latest changes from main (assuming main is up to date) into your dev branch..
+23. Push the updated dev branch back to the remote to ensure that others working on the project are also up to date:\
+    git push origin dev
 
 <!--EndFragment-->
