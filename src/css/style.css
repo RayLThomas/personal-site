@@ -2,8 +2,39 @@ html {
   overflow-y: scroll;
 }
 
+:root {
+  --grid-size: 48px;
+}
+
 body {
-  background-color: rgb(7, 7, 22);
+  background-color: #070716;
+}
+
+/* Pulse overlay (created by js/grid-pulses.js): above the grid, below content */
+#gridPulses {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, #000 35%, transparent 100%);
+}
+
+/* Subtle engineering-grid texture: fixed, behind all content, fades toward the edges */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, #000 35%, transparent 100%);
 }
 
 * {
@@ -122,6 +153,143 @@ footer a:hover {
   text-decoration: none;
 }
 
+/* -----------------------
+ENTRIES (articles, projects, conversations)
+--------------------------*/
+
+.nav-link[aria-current="page"] {
+  box-shadow: inset 0 -4px 0 #87f7ac;
+}
+
+.skipLink {
+  position: absolute;
+  z-index: 10;
+  padding: .5rem 1rem;
+  background: rgb(7, 7, 22);
+}
+
+.card h3,
+.card .small {
+  color: rgb(7, 2, 17) !important;
+}
+
+.sectionLink a {
+  font-size: 1.25rem;
+}
+
+.projectLinks a.btn {
+  color: rgb(251, 253, 251) !important;
+}
+
+.projectLinks a.btn:hover {
+  color: rgb(7, 2, 17) !important;
+  background: #87f7ac;
+}
+
+.articleBody img {
+  max-width: 100%;
+  height: auto;
+}
+
+.articleBody table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.articleBody th,
+.articleBody td {
+  padding: .5rem .75rem;
+  border: 1px solid rgb(124, 124, 124);
+}
+
+.articleBody pre {
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: .25rem;
+}
+
+.articleBody pre,
+.articleBody code {
+  font-size: 1rem;
+}
+
+.articleBody :not(pre) > code {
+  padding: .1em .35em;
+  background: rgba(255, 255, 255, .1);
+  border-radius: .2rem;
+}
+
+.entryMeta,
+.byline,
+.byline a {
+  color: rgb(119, 119, 119) !important;
+}
+
+/* Icons (inline SVG via the {% icon %} shortcode; colour follows currentColor) */
+.icon {
+  color: inherit;
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: -0.2em;
+  flex-shrink: 0;
+}
+
+/* Icons are white with blue/cyan/teal accents; on white cards the white outline switches to dark navy */
+.card .icon {
+  stroke: #080817;
+}
+
+.card .techTag {
+  color: rgb(7, 2, 17);
+}
+
+.metaSep {
+  margin-left: .75em;
+  white-space: nowrap;
+}
+
+.techTags {
+  margin: 0 0 .75rem;
+  padding: 0;
+}
+
+.entryMeta.techTags {
+  margin-bottom: 1rem;
+}
+
+.emptyState {
+  color: rgb(170, 170, 190);
+}
+
+.entryTitle {
+  color: rgb(79, 77, 209) !important;
+}
+
+.entryContent {
+  font-size: 1.25rem;
+}
+
+.entryContent p,
+.entryContent li {
+  font-size: 1.25rem;
+}
+
+.entryItem,
+article {
+  max-width: 100%;
+}
+
+.entryLinks {
+  list-style-type: disc;
+}
+
+.transcript {
+  white-space: pre-wrap;
+}
+
 /******************************
 MOBILE
 ******************************/
@@ -131,7 +299,8 @@ MOBILE
 @media only screen and (max-width: 600px) {
 
 h1 {
-    font-size: 3em;
+    font-size: 2.25em;
+    overflow-wrap: anywhere;
   }
 
 ul.nav {

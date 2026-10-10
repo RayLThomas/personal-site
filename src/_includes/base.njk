@@ -4,8 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
-    <meta name="description" content="{{ description or site.description }}" />
+    {%- set pageTitle = (title + " | " + site.name) if title else site.name %}
+    {%- set pageDescription = description or site.description %}
+    {%- set pageImage = thumbnail or image or site.ogImage %}
+    {%- set canonical = site.url + page.url %}
+    <title>{{ pageTitle }}</title>
+    <meta name="description" content="{{ pageDescription }}" />
+    <link rel="canonical" href="{{ canonical }}" />
+    <meta property="og:site_name" content="{{ site.name }}" />
+    <meta property="og:type" content="{{ ogType or 'website' }}" />
+    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:description" content="{{ pageDescription }}" />
+    <meta property="og:url" content="{{ canonical }}" />
+    {%- if pageImage %}
+    <meta property="og:image" content="{{ pageImage if pageImage.startsWith('http') else site.url + pageImage }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {%- else %}
+    <meta name="twitter:card" content="summary" />
+    {%- endif %}
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - Articles" href="/feed.xml" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,14 +31,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/style.css" />
+    {%- if prism %}
+    <link rel="stylesheet" href="/css/prism.css" />
+    {%- endif %}
     <link rel="icon" href="/images/homeIcon.png" />
   </head>
 
   <body>
+    <a class="visually-hidden-focusable skipLink" href="#main">Skip to content</a>
     {% include "header.njk" %}
     {{ content | safe }}
     {% include "footer.njk" %}
 
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/grid-pulses.js" defer></script>
   </body>
 </html>

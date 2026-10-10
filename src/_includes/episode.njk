@@ -1,0 +1,68 @@
+---
+layout: 'base.njk'
+---
+
+{# Front matter: title, date, description, guest, guestTitle, guestCompany, guestLinkedin, youtubeId, duration, image, imageAlt, topics (list), takeaways (list), transcript, draft. Body = introduction/summary. #}
+<main id="main" class="container">
+  <div class="entryContent d-flex flex-column align-items-center container col-sm-12 col-lg-7">
+    <article class="py-4">
+      <header class="py-5">
+        <h1>{{ title }}</h1>
+        <p class="entryMeta">
+          {% icon "date" %} {% if date %}<time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% endif %}
+          {%- if duration %} <span class="metaSep">{% icon "video" %} {{ duration }}</span>{% endif %}
+        </p>
+        {% if guest %}
+        <p class="fs-4">
+          {% icon "guest" %} Guest: {% if guestLinkedin %}<a href="{{ guestLinkedin }}" target="_blank" rel="noopener">{{ guest }}<span class="visually-hidden"> (LinkedIn, opens in a new tab)</span></a>{% else %}{{ guest }}{% endif %}
+          {%- if guestTitle or guestCompany %}<br /><span class="entryMeta">{{ [guestTitle, guestCompany] | select | join(", ") }}</span>{% endif %}
+        </p>
+        {% endif %}
+        <p class="entryMeta">Host: {% include "byline.njk" %}</p>
+      </header>
+
+      {% if youtubeId %}
+      <div class="ratio ratio-16x9 mb-4">
+        <iframe src="https://www.youtube-nocookie.com/embed/{{ youtubeId }}" title="{{ title }}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+      </div>
+      {% endif %}
+
+      {% if description %}<p class="fs-4">{{ description }}</p>{% endif %}
+      {% if content | trim %}<div class="articleBody">{{ content | safe }}</div>{% endif %}
+
+      {% if topics and topics.length %}
+      <h2 class="pt-4">Topics discussed</h2>
+      <ul class="entryLinks">
+        {%- for topic in topics %}<li>{{ topic }}</li>{%- endfor %}
+      </ul>
+      {% endif %}
+
+      {% if takeaways and takeaways.length %}
+      <h2 class="pt-4">Key takeaways</h2>
+      <ul class="entryLinks">
+        {%- for item in takeaways %}<li>{{ item }}</li>{%- endfor %}
+      </ul>
+      {% endif %}
+
+      {% if transcript %}
+      <h2 class="pt-4">Transcript</h2>
+      <details>
+        <summary>{% icon "transcript" %} Show transcript</summary>
+        <div class="transcript">{{ transcript }}</div>
+      </details>
+      {% endif %}
+
+      {% set relatedEpisodes = collections.conversations | related(page.url, topics, 'topics') %}
+      {% if relatedEpisodes.length %}
+      <aside class="pt-5" aria-labelledby="related-heading">
+        <h2 id="related-heading">Related conversations</h2>
+        <ul class="entryLinks">
+          {%- for ep in relatedEpisodes %}
+          <li><a href="{{ ep.url }}">{{ ep.data.title }}</a></li>
+          {%- endfor %}
+        </ul>
+      </aside>
+      {% endif %}
+    </article>
+  </div>
+</main>

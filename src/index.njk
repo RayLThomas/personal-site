@@ -2,11 +2,53 @@
 layout: 'base.njk'
 ---
 
-<main class="container">
+<main id="main" class="container">
   <div class="hero fadeIn d-flex flex-column py-5">
-    <h1>RevenueDataLab</h1>
+    <h1>Revenue Data Lab</h1>
     <div class="heroContent">
-      <p class="fs-3">Placeholder tagline. Replace this content.</p>
+      <p class="fs-3">Exploring the systems behind revenue, data, and automation. Practical projects, technical insights, and conversations with the people building better ways to work.</p>
     </div>
   </div>
+
+  {%- if collections.featuredProjects.length %}
+  <section class="py-5" aria-labelledby="featured-projects">
+    <h2 id="featured-projects">Featured Projects</h2>
+    <div class="row row-cols-1 row-cols-md-3 py-3 g-4">
+      {%- for project in collections.featuredProjects | limit(3) %}
+      {% include "project-card.njk" %}
+      {%- endfor %}
+    </div>
+    <p class="sectionLink text-end"><a href="/projects/">All projects &rarr;</a></p>
+  </section>
+  {%- endif %}
+
+  {%- if collections.articles.length %}
+  <section class="py-5 entryContent" aria-labelledby="latest-articles">
+    <h2 id="latest-articles">Latest Articles</h2>
+    <ol class="d-flex flex-column align-items-start">
+      {%- for post in collections.articles | limit(3) %}
+      {% include "article-item.njk" %}
+      {%- endfor %}
+    </ol>
+    <p class="sectionLink text-end"><a href="/articles/">All articles &rarr;</a></p>
+  </section>
+  {%- endif %}
+
+  {%- if collections.conversations.length %}
+  <section class="py-5" aria-labelledby="recent-conversations">
+    <h2 id="recent-conversations">Recent Conversations</h2>
+    <div class="row row-cols-1 row-cols-md-3 py-3 g-4">
+      {%- for ep in collections.conversations | limit(3) %}
+      {% include "episode-card.njk" %}
+      {%- endfor %}
+    </div>
+    <p class="sectionLink text-end"><a href="/conversations/">All conversations &rarr;</a></p>
+  </section>
+  {%- endif %}
+
+  <section class="py-5" aria-labelledby="about-lab">
+    <h2 id="about-lab">About Revenue Data Lab</h2>
+    <p class="fs-4">Revenue Data Lab is a place to document what I'm building, share what I'm learning, and explore how technology can solve real business problems. The focus is on practical applications of data, automation, AI, and revenue systems.</p>
+    <p class="sectionLink"><a href="/about/">Read more about Revenue Data Lab &rarr;</a></p>
+  </section>
 </main>

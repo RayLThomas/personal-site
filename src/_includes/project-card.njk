@@ -1,0 +1,19 @@
+<div class="col">
+  <a href="{{ project.url }}" class="d-block h-100">
+    <div class="card h-100">
+      {% if project.data.image %}<img src="{{ project.data.image }}" class="card-img-top" alt="{{ project.data.imageAlt }}" loading="lazy" decoding="async" />{% endif %}
+      <div class="card-body">
+        <h3 class="card-title h5">{{ project.data.title }}</h3>
+        {% if project.data.status %}<p class="card-text small">{{ project.data.status }}</p>{% endif %}
+        {% if project.data.technologies %}
+        <ul class="techTags list-unstyled d-flex flex-wrap gap-2 small">
+          {%- for t in project.data.technologies %}
+          <li class="techTag">{% set ic = t | techIcon %}{% if ic %}{% icon ic %} {% endif %}{{ t }}</li>
+          {%- endfor %}
+        </ul>
+        {% endif %}
+        {% if project.data.description %}<p class="card-text">{{ project.data.description }}</p>{% endif %}
+      </div>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,21 @@
+---
+title: Conversations
+description: Informal conversations with the people working behind the scenes of revenue operations, data, and technology. Exploring their experiences, challenges, and the ideas shaping how we work.
+layout: 'base.njk'
+---
+
+<main id="main" class="container">
+  <header class="py-5">
+    <h1>Conversations</h1>
+    <p class="fs-4">{{ description }}</p>
+  </header>
+  {%- if collections.conversations.length %}
+  <div class="row row-cols-1 row-cols-md-3 py-3 g-4">
+    {%- for ep in collections.conversations %}
+    {% include "episode-card.njk" %}
+    {%- endfor %}
+  </div>
+  {%- else %}
+  <p class="fs-4 emptyState">{% icon "conversations" %} No conversations published yet.</p>
+  {%- endif %}
+</main>

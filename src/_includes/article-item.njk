@@ -1,0 +1,8 @@
+<li class="entryItem py-4">
+  <a href="{{ post.url }}"><h3 class="entryTitle h2">{{ post.data.title }}</h3></a>
+  <span class="entryMeta">
+    {% icon "date" %} <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+    {%- if post.data.categories %} <span class="metaSep">{% icon "category" %} {{ post.data.categories | join(", ") }}</span>{% endif %}
+  </span>
+  {% if post.data.description %}<p class="fs-4">{{ post.data.description }}</p>{% endif %}
+</li>

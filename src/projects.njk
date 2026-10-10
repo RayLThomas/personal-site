@@ -1,0 +1,21 @@
+---
+title: Projects
+description: Real-world projects, technical experiments, and lessons learned from building systems that solve practical problems.
+layout: 'base.njk'
+---
+
+<main id="main" class="container">
+  <header class="py-5">
+    <h1>Projects</h1>
+    <p class="fs-4">{{ description }}</p>
+  </header>
+  {%- if collections.projects.length %}
+  <div class="row row-cols-1 row-cols-md-3 py-3 g-4">
+    {%- for project in collections.projects %}
+    {% include "project-card.njk" %}
+    {%- endfor %}
+  </div>
+  {%- else %}
+  <p class="fs-4 emptyState">{% icon "projects" %} No projects published yet.</p>
+  {%- endif %}
+</main>

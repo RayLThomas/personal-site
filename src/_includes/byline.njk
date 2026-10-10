@@ -1,0 +1,9 @@
+{#- Front matter: author, authorLinkedin override site.authorName / site.linkedin. -#}
+{%- set bylineName = author or site.authorName -%}
+{%- set bylineLinkedin = authorLinkedin or (site.linkedin if not author else "") -%}
+  {%- if bylineName %}
+<span class="byline">
+  {% icon "author" %} By {{ bylineName }}
+  {%- if bylineLinkedin %} (<a href="{{ bylineLinkedin }}" target="_blank" rel="noopener">{% icon "linkedin" %} LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>){% endif %}
+</span>
+{%- endif %}

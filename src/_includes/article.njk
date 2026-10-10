@@ -1,0 +1,42 @@
+---
+layout: 'base.njk'
+ogType: article
+---
+
+<main id="main" class="container">
+  <div class="entryContent d-flex flex-column align-items-center container col-sm-12 col-lg-7">
+    <article class="py-4">
+      <header class="py-5">
+        <h1>{{ title }}</h1>
+        <p class="entryMeta">
+          {% icon "date" %} {% if date %}<time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% endif %}
+          <span class="metaSep">{% icon "reading-time" %} {{ readingTime or (content | readingTime) }} min read</span>
+        </p>
+        {% set labels = [].concat(categories or [], tags or []) %}
+        {% if categories or tags %}
+        <p class="entryMeta">
+          {%- if categories %}{% icon "category" %} {{ categories | join(", ") }}{% endif %}
+          {%- if tags %} <span class="metaSep">{% icon "tag" %} {{ tags | join(", ") }}</span>{% endif %}
+        </p>
+        {% endif %}
+        <p class="entryMeta">{% include "byline.njk" %}</p>
+      </header>
+      {% if image %}<img class="img-fluid pb-5" src="{{ image }}" alt="{{ imageAlt }}" loading="lazy" decoding="async" />{% endif %}
+      <div class="articleBody">
+        {{ content | safe }}
+      </div>
+
+      {% set relatedArticles = collections.articles | related(page.url, categories, 'categories') %}
+      {% if relatedArticles.length %}
+      <aside class="pt-5" aria-labelledby="related-heading">
+        <h2 id="related-heading">Related articles</h2>
+        <ul class="entryLinks">
+          {%- for post in relatedArticles %}
+          <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+          {%- endfor %}
+        </ul>
+      </aside>
+      {% endif %}
+    </article>
+  </div>
+</main>

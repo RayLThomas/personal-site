@@ -1,0 +1,37 @@
+---
+layout: 'base.njk'
+---
+
+{# Front matter: title, date, description, status, technologies (list), image, imageAlt, featured, github, demo, draft. Body = case study in Markdown. #}
+<main id="main" class="container">
+  <div class="entryContent d-flex flex-column align-items-center container col-sm-12 col-lg-7">
+    <article class="py-4">
+      <header class="py-5">
+        <h1>{{ title }}</h1>
+        {% if description %}<p class="fs-4">{{ description }}</p>{% endif %}
+        <p class="entryMeta">
+          {% icon "date" %} {% if date %}<time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% endif %}
+          {%- if status %} <span class="metaSep">{{ status }}</span>{% endif %}
+        </p>
+        {% if technologies %}
+        <ul class="techTags entryMeta list-unstyled d-flex flex-wrap gap-3">
+          {%- for t in technologies %}
+          <li class="techTag">{% set ic = t | techIcon %}{% if ic %}{% icon ic %} {% endif %}{{ t }}</li>
+          {%- endfor %}
+        </ul>
+        {% endif %}
+        <p class="entryMeta">{% include "byline.njk" %}</p>
+        {% if github or demo %}
+        <p class="projectLinks">
+          {% if github %}<a class="btn btn-outline-light me-2" href="{{ github }}" target="_blank" rel="noopener">{% icon "github" %} GitHub repository<span class="visually-hidden"> (opens in a new tab)</span></a>{% endif %}
+          {% if demo %}<a class="btn btn-outline-light" href="{{ demo }}" target="_blank" rel="noopener">{% icon "external-link" %} Live demo<span class="visually-hidden"> (opens in a new tab)</span></a>{% endif %}
+        </p>
+        {% endif %}
+      </header>
+      {% if image %}<img class="img-fluid pb-5" src="{{ image }}" alt="{{ imageAlt }}" loading="lazy" decoding="async" />{% endif %}
+      <div class="articleBody">
+        {{ content | safe }}
+      </div>
+    </article>
+  </div>
+</main>

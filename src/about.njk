@@ -1,0 +1,22 @@
+---
+title: About
+description: Revenue Data Lab is where I explore the intersection of business systems, data, and technology.
+layout: 'base.njk'
+---
+
+<main id="main" class="container">
+  <div class="entryContent d-flex flex-column align-items-center container col-sm-12 col-lg-7">
+    <div class="py-4">
+      <header class="py-5">
+        <h1>About Revenue Data Lab</h1>
+      </header>
+      <p>Revenue Data Lab is where I explore the intersection of business systems, data, and technology.</p>
+      <p>My professional background is in CRM administration, revenue operations, business intelligence, and technical problem-solving. Over time, my work has increasingly focused on improving how organizations collect, organize, connect, and use their data.</p>
+      <p>I'm particularly interested in SQL, Python, data engineering, AI, automation, and building systems that reduce manual work while making information more useful.</p>
+      <p>This website serves as a record of practical projects, technical experiments, lessons learned, and conversations with other professionals doing interesting work in these fields.</p>
+      {%- if site.linkedin %}
+      <p><a href="{{ site.linkedin }}" target="_blank" rel="noopener">{% icon "linkedin" %} Connect on LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+      {%- endif %}
+    </div>
+  </div>
+</main>

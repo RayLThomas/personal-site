@@ -1,0 +1,23 @@
+---
+title: Articles
+description: Technical insights, tutorials, and observations from working with data, automation, and business systems.
+layout: 'base.njk'
+---
+
+<main id="main" class="container">
+  <header class="py-5">
+    <h1>Articles</h1>
+    <p class="fs-4">{{ description }}</p>
+  </header>
+  <div class="entryContent">
+    {%- if collections.articles.length %}
+    <ol class="d-flex flex-column align-items-start container col-sm-12 col-lg-7">
+      {%- for post in collections.articles %}
+      {% include "article-item.njk" %}
+      {%- endfor %}
+    </ol>
+    {%- else %}
+    <p class="fs-4 emptyState">{% icon "articles" %} No articles published yet.</p>
+    {%- endif %}
+  </div>
+</main>
