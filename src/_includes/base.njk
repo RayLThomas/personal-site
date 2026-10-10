@@ -1,9 +1,11 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
+    <meta name="description" content="{{ description or site.description }}" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,32 +14,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }}</title>
-    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <link rel="icon" href="/images/homeIcon.png"/>
-    <script src="https://kit.fontawesome.com/7839b4a7d4.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/images/homeIcon.png" />
   </head>
-  
+
   <body>
-      {% include "header.njk" %}
-      {{ content | safe }}
-      {% include "footer.njk" %}
+    {% include "header.njk" %}
+    {{ content | safe }}
+    {% include "footer.njk" %}
 
     <script src="/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
   </body>
 </html>

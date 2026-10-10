@@ -1,7 +1,7 @@
 {
-  "name": "personal-site",
+  "name": "revenuedatalab",
   "version": "1.0.0",
-  "description": "My personal dev site",
+  "description": "RevenueDataLab website",
   "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RayLThomas/personal-site.git"
+    "url": "git+https://github.com/RayLThomas/RevenueDataLab.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RayLThomas/personal-site/issues"
+    "url": "https://github.com/RayLThomas/RevenueDataLab/issues"
   },
-  "homepage": "https://github.com/RayLThomas/personal-site#readme",
+  "homepage": "https://github.com/RayLThomas/RevenueDataLab#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2"
   }
