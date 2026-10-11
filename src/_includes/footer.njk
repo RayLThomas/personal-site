@@ -2,8 +2,8 @@
   <div class="fullWidth container py-4">
     <div class="footerInner d-flex flex-wrap justify-content-start align-items-center">
       <p class="footerlinks">
-        <strong><span>&#169;</span> {{ "now" | year }}</strong><br />
-        <a href="/">{{ site.name }}</a>
+        <a href="/" class="brand brandSmall" aria-label="{{ site.name }} home"><img src="/images/logo-icon.svg" width="28" height="28" alt="" /><span class="brandText" aria-hidden="true"><span class="brandTop">Revenue</span><span class="brandBottom">Data Lab</span></span></a><br />
+        <strong><span>&#169;</span> {{ "now" | year }}</strong> {{ site.name }}
       </p>
       <p class="footerlinks ps-5">
         <strong>Follow</strong><br />

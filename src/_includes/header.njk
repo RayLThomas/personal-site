@@ -1,11 +1,17 @@
-<header class="container py-5 mb-4">
-  <nav aria-label="Primary">
-    <ul class="nav col-12 mb-2 mb-md-0">
-      {%- for item in navigation %}
-      <li class="pe-3">
-        <a href="{{ item.url }}" class="nav-link pl-0"{% if (item.url == "/" and page.url == "/") or (item.url != "/" and page.url.startsWith(item.url)) %} aria-current="page"{% endif %}><span class="fw-bold pe-1" aria-hidden="true">0{{ loop.index }}</span>{{ item.label | lower }}</a>
-      </li>
-      {%- endfor %}
-    </ul>
-  </nav>
+<header class="container py-4 mb-4">
+  <div class="headerInner d-flex flex-wrap align-items-center justify-content-between gap-3">
+    <a href="/" class="brand" aria-label="{{ site.name }} home">
+      <img src="/images/logo-icon.svg" width="36" height="36" alt="" />
+      <span class="brandText" aria-hidden="true"><span class="brandTop">Revenue</span><span class="brandBottom">Data Lab</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav mb-0">
+        {%- for item in navigation %}
+        <li class="pe-3">
+          <a href="{{ item.url }}" class="nav-link pl-0"{% if (item.url == "/" and page.url == "/") or (item.url != "/" and page.url.startsWith(item.url)) %} aria-current="page"{% endif %}><span class="fw-bold pe-1" aria-hidden="true">0{{ loop.index }}</span>{{ item.label | lower }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
 </header>

@@ -1,8 +1,29 @@
-<li class="entryItem py-4">
-  <a href="{{ post.url }}"><h3 class="entryTitle h2">{{ post.data.title }}</h3></a>
-  <span class="entryMeta">
-    {% icon "date" %} <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
-    {%- if post.data.categories %} <span class="metaSep">{% icon "category" %} {{ post.data.categories | join(", ") }}</span>{% endif %}
-  </span>
-  {% if post.data.description %}<p class="fs-4">{{ post.data.description }}</p>{% endif %}
+<li class="col">
+  <a href="{{ post.url }}" class="cardLink d-block h-100">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="cardTop">
+          <span class="cardIcon">{% icon "article" %}</span>
+          <time class="cardDate" datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+        </div>
+        <h3 class="card-title">{{ post.data.title }}</h3>
+        {% if post.data.description %}<p class="card-text">{{ post.data.description }}</p>{% endif %}
+        <div class="cardFoot">
+          {%- if post.data.categories or post.data.tags %}
+          <ul class="techTags list-unstyled">
+            {%- for c in post.data.categories %}
+            {% set ic = (c | techIcon) or "category" %}
+            <li class="techTag">{% icon ic %} {{ c }}</li>
+            {%- endfor %}
+            {%- for t in post.data.tags %}
+            {% set ic = (t | techIcon) or "tag" %}
+            <li class="techTag">{% icon ic %} {{ t }}</li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+          <span class="cardArrow" aria-hidden="true">&rarr;</span>
+        </div>
+      </div>
+    </div>
+  </a>
 </li>

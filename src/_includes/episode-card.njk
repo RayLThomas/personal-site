@@ -1,18 +1,23 @@
 <div class="col">
-  <a href="{{ ep.url }}" class="d-block h-100">
+  <a href="{{ ep.url }}" class="cardLink d-block h-100">
     <div class="card h-100">
       {% if ep.data.thumbnail %}<img src="{{ ep.data.thumbnail }}" class="card-img-top" alt="{{ ep.data.imageAlt or '' }}" loading="lazy" decoding="async" />{% endif %}
       <div class="card-body">
-        <h3 class="card-title h5">{{ ep.data.title }}</h3>
+        <div class="cardTop">
+          <span class="cardIcon">{% icon "conversation" %}</span>
+          <time class="cardDate" datetime="{{ ep.date | isoDate }}">{{ ep.date | readableDate }}</time>
+        </div>
+        <h3 class="card-title">{{ ep.data.title }}</h3>
         {% if ep.data.guest %}
-        <p class="card-text small">
+        <p class="cardGuest">
           {% icon "guest" %} {{ ep.data.guest }}{% if ep.data.guestTitle or ep.data.guestCompany %} &mdash; {{ [ep.data.guestTitle, ep.data.guestCompany] | select | join(", ") }}{% endif %}
         </p>
         {% endif %}
-        <p class="card-text small">
-          {% icon "date" %} <time datetime="{{ ep.date | isoDate }}">{{ ep.date | readableDate }}</time>{% if ep.data.duration %} <span class="metaSep">{% icon "video" %} {{ ep.data.duration }}</span>{% endif %}
-        </p>
         {% if ep.data.description %}<p class="card-text">{{ ep.data.description }}</p>{% endif %}
+        <div class="cardFoot">
+          {% if ep.data.duration %}<ul class="techTags list-unstyled"><li class="techTag">{% icon "video" %} {{ ep.data.duration }}</li></ul>{% else %}<span></span>{% endif %}
+          <span class="cardArrow" aria-hidden="true">&rarr;</span>
+        </div>
       </div>
     </div>
   </a>

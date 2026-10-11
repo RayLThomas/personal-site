@@ -23,8 +23,8 @@ layout: 'base.njk'
         <p class="entryMeta">{% include "byline.njk" %}</p>
         {% if github or demo %}
         <p class="projectLinks">
-          {% if github %}<a class="btn btn-outline-light me-2" href="{{ github }}" target="_blank" rel="noopener">{% icon "github" %} GitHub repository<span class="visually-hidden"> (opens in a new tab)</span></a>{% endif %}
-          {% if demo %}<a class="btn btn-outline-light" href="{{ demo }}" target="_blank" rel="noopener">{% icon "external-link" %} Live demo<span class="visually-hidden"> (opens in a new tab)</span></a>{% endif %}
+          {% if github %}<a class="btnSecondary me-2" href="{{ github }}" target="_blank" rel="noopener">{% icon "github" %} GitHub repository<span class="visually-hidden"> (opens in a new tab)</span></a>{% endif %}
+          {% if demo %}<a class="btnPrimary" href="{{ demo }}" target="_blank" rel="noopener">{% icon "external-link" %} Live demo<span class="visually-hidden"> (opens in a new tab)</span></a>{% endif %}
         </p>
         {% endif %}
       </header>

@@ -8,41 +8,45 @@ layout: 'base.njk'
     <div class="heroContent">
       <p class="fs-3">Exploring the systems behind revenue, data, and automation. Practical projects, technical insights, and conversations with the people building better ways to work.</p>
     </div>
+    <div class="heroActions">
+      <a class="btnSecondary" href="/projects/">View Projects &rarr;</a>
+      <a class="btnSecondary" href="/articles/">Read Articles</a>
+    </div>
   </div>
 
   {%- if collections.featuredProjects.length %}
   <section class="py-5" aria-labelledby="featured-projects">
-    <h2 id="featured-projects">Featured Projects</h2>
+    <h2 id="featured-projects" class="accentHeading">Featured Projects</h2>
     <div class="row row-cols-1 row-cols-md-3 py-3 g-4">
       {%- for project in collections.featuredProjects | limit(3) %}
       {% include "project-card.njk" %}
       {%- endfor %}
     </div>
-    <p class="sectionLink text-end"><a href="/projects/">All projects &rarr;</a></p>
+    <p class="sectionLink text-end"><a class="btnSecondary" href="/projects/">All projects &rarr;</a></p>
   </section>
   {%- endif %}
 
   {%- if collections.articles.length %}
-  <section class="py-5 entryContent" aria-labelledby="latest-articles">
-    <h2 id="latest-articles">Latest Articles</h2>
-    <ol class="d-flex flex-column align-items-start">
+  <section class="py-5" aria-labelledby="latest-articles">
+    <h2 id="latest-articles" class="accentHeading">Latest Articles</h2>
+    <ol class="row row-cols-1 row-cols-md-3 g-4 py-3 list-unstyled">
       {%- for post in collections.articles | limit(3) %}
       {% include "article-item.njk" %}
       {%- endfor %}
     </ol>
-    <p class="sectionLink text-end"><a href="/articles/">All articles &rarr;</a></p>
+    <p class="sectionLink text-end"><a class="btnSecondary" href="/articles/">All articles &rarr;</a></p>
   </section>
   {%- endif %}
 
   {%- if collections.conversations.length %}
   <section class="py-5" aria-labelledby="recent-conversations">
-    <h2 id="recent-conversations">Recent Conversations</h2>
+    <h2 id="recent-conversations" class="accentHeading">Recent Conversations</h2>
     <div class="row row-cols-1 row-cols-md-3 py-3 g-4">
       {%- for ep in collections.conversations | limit(3) %}
       {% include "episode-card.njk" %}
       {%- endfor %}
     </div>
-    <p class="sectionLink text-end"><a href="/conversations/">All conversations &rarr;</a></p>
+    <p class="sectionLink text-end"><a class="btnSecondary" href="/conversations/">All conversations &rarr;</a></p>
   </section>
   {%- endif %}
 

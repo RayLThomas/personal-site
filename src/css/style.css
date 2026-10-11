@@ -4,10 +4,20 @@ html {
 
 :root {
   --grid-size: 48px;
+  --bg: #070716;
+  --surface: #0b1220;
+  --surface-2: #151d30;
+  --blue: #3b82f6;
+  --cyan: #06b6d4;
+  --teal: #2dd4bf;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --border: #1f2937;
+  --accent-gradient: linear-gradient(135deg, var(--blue), var(--cyan), var(--teal));
 }
 
 body {
-  background-color: #070716;
+  background-color: var(--bg);
 }
 
 /* Pulse overlay (created by js/grid-pulses.js): above the grid, below content */
@@ -38,7 +48,7 @@ body::before {
 }
 
 * {
-  color: rgb(251, 253, 251);
+  color: var(--text);
 }
 
 .nav-link {
@@ -89,32 +99,32 @@ HOME
 --------------------------*/
 .nav a:hover {
   transition: box-shadow 0.18s cubic-bezier(0.36, 0.65, 0.62, 1);
-  box-shadow: inset 0 -4px 0 #87f7ac;
+  box-shadow: inset 0 -4px 0 var(--teal);
 }
 
 .hero a {
   text-decoration: none;
-  border-bottom: 2px solid #87f7ac;
-  box-shadow: inset 0 -4px 0 #87f7ac;
+  border-bottom: 2px solid var(--teal);
+  box-shadow: inset 0 -4px 0 var(--teal);
   color: inherit;
   transition: background 0.15s cubic-bezier(0.36, 0.65, 0.62, 1);
 }
 
 a,
 a > h2 {
-  color: rgb(79, 77, 209) !important;
+  color: var(--cyan) !important;
   border-bottom: none;
   box-shadow: none;
 }
 
 a:hover,
 a > h2:hover {
-  color: #87f7ac !important;
+  color: var(--teal) !important;
   background: none;
 }
 
 .hero a:hover {
-  background: #87f7ac;
+  background: var(--teal);
   color: rgb(7, 2, 17) !important;
 }
 
@@ -126,11 +136,6 @@ main {
   min-height: 78vh;
 }
 
-.card p,
-.card h5 {
-  color: rgb(7, 2, 17) !important;
-}
-
 .card > img:hover {
   opacity: 90%;
   transition-duration: .200s;
@@ -138,11 +143,11 @@ main {
 }
 
 .footerlinks > a {
-  color: rgb(79, 77, 209) !important;
+  color: var(--cyan) !important;
 }
 
 footer {
-  border-top: 1px solid rgb(124, 124, 124);
+  border-top: 1px solid var(--border);
 }
 
 footer a {
@@ -158,32 +163,23 @@ ENTRIES (articles, projects, conversations)
 --------------------------*/
 
 .nav-link[aria-current="page"] {
-  box-shadow: inset 0 -4px 0 #87f7ac;
+  box-shadow: inset 0 -4px 0 var(--teal);
 }
 
 .skipLink {
   position: absolute;
   z-index: 10;
   padding: .5rem 1rem;
-  background: rgb(7, 7, 22);
-}
-
-.card h3,
-.card .small {
-  color: rgb(7, 2, 17) !important;
+  background: var(--bg);
 }
 
 .sectionLink a {
   font-size: 1.25rem;
 }
 
-.projectLinks a.btn {
-  color: rgb(251, 253, 251) !important;
-}
-
-.projectLinks a.btn:hover {
-  color: rgb(7, 2, 17) !important;
-  background: #87f7ac;
+.projectLinks a.btnPrimary,
+.projectLinks a.btnSecondary {
+  font-size: 1rem;
 }
 
 .articleBody img {
@@ -225,7 +221,7 @@ ENTRIES (articles, projects, conversations)
 .entryMeta,
 .byline,
 .byline a {
-  color: rgb(119, 119, 119) !important;
+  color: var(--muted) !important;
 }
 
 /* Icons (inline SVG via the {% icon %} shortcode; colour follows currentColor) */
@@ -237,15 +233,6 @@ ENTRIES (articles, projects, conversations)
   flex-shrink: 0;
 }
 
-/* Icons are white with blue/cyan/teal accents; on white cards the white outline switches to dark navy */
-.card .icon {
-  stroke: #080817;
-}
-
-.card .techTag {
-  color: rgb(7, 2, 17);
-}
-
 .metaSep {
   margin-left: .75em;
   white-space: nowrap;
@@ -254,18 +241,35 @@ ENTRIES (articles, projects, conversations)
 .techTags {
   margin: 0 0 .75rem;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
 }
 
 .entryMeta.techTags {
   margin-bottom: 1rem;
 }
 
+/* Technology / category chips */
+.techTag {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .2rem .65rem;
+  font-size: .85rem;
+  line-height: 1.4;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
 .emptyState {
-  color: rgb(170, 170, 190);
+  color: var(--muted);
 }
 
 .entryTitle {
-  color: rgb(79, 77, 209) !important;
+  color: var(--cyan) !important;
 }
 
 .entryContent {
@@ -290,6 +294,289 @@ article {
   white-space: pre-wrap;
 }
 
+/* -----------------------
+BRAND / HEADER
+--------------------------*/
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  line-height: 1.05;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.brandTop {
+  color: var(--text);
+}
+
+.brandBottom {
+  background: linear-gradient(90deg, var(--cyan), var(--teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--cyan);
+}
+
+.brandSmall {
+  margin-bottom: .5rem;
+}
+
+.brandSmall .brandText {
+  font-size: .9rem;
+}
+
+/* -----------------------
+CARDS (projects, articles, conversations)
+--------------------------*/
+.card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+/* Gradient border: fades in on hover / keyboard focus */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  border-radius: 8px;
+  background: var(--accent-gradient);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .22s ease;
+  pointer-events: none;
+}
+
+.cardLink:hover,
+.cardLink:focus-visible {
+  text-decoration: none;
+}
+
+.cardLink:focus-visible {
+  outline: none;
+}
+
+.cardLink:hover .card,
+.cardLink:focus-visible .card {
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(6, 182, 212, .12);
+}
+
+.cardLink:hover .card::after,
+.cardLink:focus-visible .card::after {
+  opacity: 1;
+}
+
+.card-img-top {
+  border-radius: 7px 7px 0 0;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: .75rem;
+}
+
+.cardIcon .icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.statusBadge {
+  padding: .15rem .7rem;
+  font-size: .8rem;
+  color: var(--cyan);
+  background: rgba(6, 182, 212, .1);
+  border: 1px solid rgba(6, 182, 212, .25);
+  border-radius: 999px;
+}
+
+.cardDate {
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.card-title {
+  margin: 0 0 .5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card-text,
+.cardGuest {
+  margin: 0 0 1rem;
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+.cardGuest {
+  margin-bottom: .5rem;
+}
+
+.cardFoot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-top: auto;
+}
+
+.cardFoot .techTags {
+  margin: 0;
+}
+
+.cardArrow {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--cyan);
+}
+
+ul.techTags > li.techTag {
+  font-size: .85rem;
+}
+
+/* -----------------------
+SECTION HEADINGS, BUTTONS, HERO GLOW
+--------------------------*/
+.accentHeading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  margin-top: .6rem;
+  background: var(--accent-gradient);
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: inline-block;
+  padding: .7rem 1.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+  border-radius: 6px;
+  transition: transform .3s ease-out, box-shadow .3s ease-out;
+}
+
+/* Primary: blue to cyan fill with dark text */
+a.btnPrimary,
+a.btnPrimary:hover,
+.hero a.btnPrimary,
+.hero a.btnPrimary:hover {
+  color: #070716 !important;
+  background: linear-gradient(90deg, var(--blue), var(--cyan) 70%, var(--teal));
+  border: 0;
+}
+
+a.btnPrimary .icon,
+a.btnPrimary .icon * {
+  stroke: #070716;
+}
+
+/* Secondary: dark fill with a blue/cyan outline */
+a.btnSecondary,
+a.btnSecondary:hover,
+.hero a.btnSecondary,
+.hero a.btnSecondary:hover {
+  color: var(--text) !important;
+  background: var(--bg);
+  border: 2px solid rgba(6, 182, 212, .55);
+}
+
+/* Lift: the whole button rises 4px while a 4px teal edge appears beneath it,
+   so the edge's bottom stays at the button's resting position. No layout change. */
+a.btnPrimary,
+a.btnSecondary,
+.hero a.btnPrimary,
+.hero a.btnSecondary {
+  transform: translateY(0);
+  box-shadow: 0 0 0 var(--teal);
+}
+
+a.btnPrimary:hover,
+a.btnSecondary:hover,
+a.btnPrimary:focus-visible,
+a.btnSecondary:focus-visible,
+.hero a.btnPrimary:hover,
+.hero a.btnSecondary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 0 var(--teal);
+}
+
+a.btnPrimary:focus-visible,
+a.btnSecondary:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 6px;
+}
+
+/* The generic .hero a rule would otherwise override the button transition */
+.hero a.btnPrimary,
+.hero a.btnSecondary {
+  transition: transform .3s ease-out, box-shadow .3s ease-out;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.heroActions a {
+  font-size: 1.25rem;
+}
+
+.hero {
+  position: relative;
+}
+
+/* Stationary, diffused glow behind the hero; stays inside the box and fades to transparent */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -80px 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 45% 50% at 35% 45%, rgba(6, 182, 212, .07), transparent 100%),
+    radial-gradient(ellipse 30% 40% at 55% 35%, rgba(59, 130, 246, .04), transparent 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::after,
+  .btnPrimary,
+  .btnSecondary {
+    transition: none;
+  }
+
+  .cardLink:hover .card,
+  .cardLink:focus-visible .card {
+    transform: none;
+  }
+}
+
 /******************************
 MOBILE
 ******************************/
@@ -305,6 +592,10 @@ h1 {
 
 ul.nav {
     justify-content: center;
+  }
+
+  .headerInner {
+    justify-content: center !important;
   }
 
 }

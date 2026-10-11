@@ -11,7 +11,7 @@ layout: 'base.njk'
   </header>
   <div class="entryContent">
     {%- if collections.articles.length %}
-    <ol class="d-flex flex-column align-items-start container col-sm-12 col-lg-7">
+    <ol class="row row-cols-1 row-cols-md-3 g-4 py-3 list-unstyled">
       {%- for post in collections.articles %}
       {% include "article-item.njk" %}
       {%- endfor %}
