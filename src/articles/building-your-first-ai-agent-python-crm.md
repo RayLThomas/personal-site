@@ -10,8 +10,6 @@ tags:
 slug: building-your-first-ai-agent-python-crm
 ---
 
-# Building Your First AI Agent with Python and OpenAI
-
 I wanted to understand what makes an AI agent different from a normal prompt. Reading about agents helped, but building one made the distinction clearer. This project uses a small CSV of fictional CRM deals, two Python functions, and an OpenAI model. It isn't intended to replace HubSpot reporting or handle real customer data.
 
 The exercise is simple: ask a question in plain English, let the model decide which function to call, execute that function in Python, and give the result back to the model for an answer.
